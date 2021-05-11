@@ -14,11 +14,20 @@ if (!isset($_SESSION["id"])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin List</title>
     <style>
+        body{
+            background-color: lightgray;
+        }
         table {
             border-collapse: collapse;
+
+
         }
 
-        table,
+        table{
+            border: solid;
+            
+
+        }
         th,
         td {
             padding: 10px;
@@ -26,7 +35,34 @@ if (!isset($_SESSION["id"])) {
 
         th,
         td {
-            border: 1px solid black;
+            border: 1px solid darkslategray;
+            border-width: 3px;
+            padding-bottom: 30px;
+            padding-left: 30px;
+            padding-right: 70px;
+            font: 17px Georgia, serif;
+            
+
+        }
+        .min{
+            border: 6px solid darkslategray;
+            margin-top: 10px;
+            border-right: transparent;
+            border-bottom: transparent;
+            border-left: transparent;
+        }
+        .mon{
+            border: transparent;
+            margin-top: 100px;
+            padding-left: 250px;
+        }
+        .man{
+            margin-left: 700px;
+            border: transparent;
+            font: 25px Georgia, serif;
+            padding-bottom:70px;
+
+        }
         }
     </style>
 </head>
@@ -35,16 +71,20 @@ if (!isset($_SESSION["id"])) {
     <?php
     include_once("admin-nav.php");
     ?>
-    <div>
+    <div class="min">
+        <div class="mon">
+            <div class="man">
         <label>Admin List</label>
+
         <input id='myInput' onkeyup='searchTable()' type='text' placeholder="Search">
+    </div>
         <table id='myTable'>
             <thead>
                 <tr>
-                    <th>#</th>
-                    <th>Username</th>
-                    <th>CreateAt</th>
-                    <th>Action</th>
+                    <th style="font-weight: bold;">#</th>
+                    <th style="font-weight: bold;">Username</th>
+                    <th style="font-weight: bold;">CreateAt</th>
+                    <th style="font-weight: bold;">Action</th>
                 </tr>
             </thead>
             <tbody>
@@ -67,6 +107,7 @@ if (!isset($_SESSION["id"])) {
                 } ?>
             </tbody>
         </table>
+    </div>
     </div>
     <script>
         function searchTable() {

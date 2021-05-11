@@ -16,6 +16,12 @@ if (!isset($_SESSION["id"])) {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <style>
+        body{
+            background-color: lightgray;
+            color: silver;
+            
+
+        }
         table {
             border-collapse: collapse;
         }
@@ -72,16 +78,45 @@ if (!isset($_SESSION["id"])) {
         .rate>label:hover~input:checked~label {
             color: #c59b08;
         }
+
+        .lang{
+            margin-left: 350px;
+            margin-top: 150px;
+            max-width: 650px;
+            font: 17px Georgia, serif;
+            background-color: darkslategray;
+            border-style: solid;
+            border-width: 1px;
+            padding-top: 20px;
+            padding-bottom: 25px;
+            padding-right: 25px;
+            padding-left: 25px;
+            box-shadow: 5px 5px 5px grey;
+            border-radius: 15px;
+        }
+        .rek{
+            padding-top: 40px;
+            padding-right: 10px;
+        }
+
+        .rek, button {
+            margin: auto;
+            border-radius: 5px;
+        }
+        .rek, textarea{
+            color: silver;
+
+        }
     </style>
 </head>
 
 <body>
-    <div>
+    <div class="lang">
         <?php
         $q = $con->query("SELECT * FROM users WHERE id=$_GET[user_id]");
         $res = $q->fetch_object();
         ?>
-        <label>Rate Employee <?php echo strtoupper("$res->fname $res->lname") ?></label>
+        <label>Rate Employee  <?php echo strtoupper("$res->fname $res->lname") ?></label>
 
         <form action="../back/rate.php" method="POST">
             <input type="text" value="<?php echo $_GET['id'] ?>" name="id" readonly hidden>
@@ -98,11 +133,13 @@ if (!isset($_SESSION["id"])) {
                 <input type="radio" id="star1" name="rate" value="1" />
                 <label for="star1" title="text">1 star</label>
             </div>
-
+            <div class="rek">
             <label>Comment</label>
-            <textarea name="comment" cols="30" rows="10" placeholder="Your comment" required></textarea>
-            <button type="submit">Submit</button>
-            <button type="button" onclick="return(window.history.back())">Cancel</button>
+            <textarea name="comment" cols="30" rows="10" placeholder="Your comment" required style="background-color:silver; color: black;"></textarea>
+
+            <button type="submit" style="background-color:silver; color: darkslategray;">Submit</button>
+            <button type="button" onclick="return(window.history.back())" style="background-color:silver; color: darkslategray;">Cancel</button>
+        </div>
         </form>
 
     </div>

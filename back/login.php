@@ -22,13 +22,13 @@ if ($q->num_rows > 0) {
             echo "
             <script>
                 alert('Welcome $user->fname $user->lname.')
-                window.location.href = '../pages/my-jobs.php'
+                window.location.href = '../pages/hiring.php'
             </script>";
         } else if ($userType == "employer") {
             echo "
             <script>
                 alert('Welcome $user->fname $user->lname.')
-                window.location.href = '../pages/applicant-list.php'
+                window.location.href = '../pages/application-list.php'
             </script>";
         }
     } else {

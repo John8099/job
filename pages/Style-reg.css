@@ -1,0 +1,72 @@
+body{
+	background-color: lightgray;
+
+}
+
+.reg{
+	
+	border-bottom: 5px solid darkslategray;
+	border-top: 5px solid darkslategray;
+	margin-left: 400px;
+	margin-right: 400px;
+	margin-bottom: 50px;
+	margin-top: 30px;
+	height: 400%;
+
+
+
+}
+
+
+.us{
+	border: transparent;
+	float: center;
+	margin-right: 90px;
+	margin-left: 30px;
+	padding-left: 50px;
+	padding-top: 30px;
+	padding-bottom: 20px;
+	font-family: Georgia, serif;
+	
+}
+
+#type{
+	background: none;
+	border-top: transparent;
+	border-right: transparent;
+	border-left: transparent;
+	font: 20px Georgia, serif;
+	font-color: black;
+
+}
+
+#type1[type="submit"]
+{
+	border: none;
+	width: 90%;
+	outline: none;
+	height: 30px;
+	background: transparent;
+	color: darkslategray;
+	font-size: 18px;
+	border-radius: 90px;
+}
+
+#type1[type="submit"]:hover
+{
+	cursor: pointer;
+	background: gray;
+	color: black;
+
+}
+
+.us a{
+	text-decoration: none;
+	font-size: 12px;
+	line-height: 20px;
+	color: darkslategray;
+}
+.us a:hover
+{
+	color: blue;
+}

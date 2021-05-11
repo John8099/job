@@ -16,6 +16,9 @@ if (!isset($_SESSION["id"])) {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <style>
+        body{
+            background-color: lightgray;
+        }
         table {
             border-collapse: collapse;
         }
@@ -28,32 +31,65 @@ if (!isset($_SESSION["id"])) {
 
         th,
         td {
-            border: 1px solid black;
+            border: 1px solid darkslategray;
+            border-width: 3px;
+            padding-bottom: 40px;
+            padding-right: 40px;
+            color: black;
+            background-color: lightgray;
+            font: 17px Georgia, serif;
         }
+
+
+        
 
         .checked {
             color: orange;
+        }
+
+        .min{
+            border: 6px solid darkslategray;
+            border-bottom: transparent;
+            border-right: transparent;
+            border-left: transparent;
+            
+
+        }
+        .mon{
+            border: transparent;
+            margin-top: 100px;
+            padding-left: 50px;
+        }
+        .man{
+            margin-left: 880px;
+            border: transparent;
+            font: 25px Georgia, serif;
+            padding-bottom:70px;
+
         }
     </style>
 </head>
 
 <body>
     <?php include_once("employer-nav.php") ?>
-    <div>
+    <div class="min">
+        <div class="mon">
+            <div class="man">
         <label>Applicant List</label>
         <input id='myInput' onkeyup='searchTable()' type='text' placeholder="Search">
+    </div>
         <table id='myTable'>
             <thead>
                 <tr>
-                    <th>#</th>
-                    <th>Fullname</th>
-                    <th>Birth day</th>
-                    <th>Age</th>
-                    <th>Address</th>
-                    <th>Contact Number</th>
-                    <th>Expertise</th>
-                    <th>Ratings</th>
-                    <th>Action</th>
+                    <th style="font-weight: bold;">#</th>
+                    <th style="font-weight: bold;">Fullname</th>
+                    <th style="font-weight: bold;">Birthday</th>
+                    <th style="font-weight: bold;">Age</th>
+                    <th style="font-weight: bold;">Address</th>
+                    <th style="font-weight: bold;">Contact Number</th>
+                    <th style="font-weight: bold;">Expertise</th>
+                    <th style="font-weight: bold;">Ratings</th>
+                    <th style="font-weight: bold;">Action</th>
                 </tr>
             </thead>
             <tbody>
@@ -133,7 +169,7 @@ if (!isset($_SESSION["id"])) {
                             ?>
                         </td>
                         <td>
-                            <a href="additional-msg.php?id=<?php echo $res->id ?>">Hire</a>
+                            <a href="additional-msg.php?id=<?php echo $res->id ?>">Message</a>
                         </td>
 
                     </tr>
@@ -144,6 +180,7 @@ if (!isset($_SESSION["id"])) {
             </tbody>
         </table>
     </div>
+</div>
 
 </body>
 <script>

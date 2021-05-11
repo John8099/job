@@ -16,6 +16,9 @@ if (!isset($_SESSION["id"])) {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <style>
+        body{
+            background-color: lightgray;
+        }
         table {
             border-collapse: collapse;
         }
@@ -28,7 +31,32 @@ if (!isset($_SESSION["id"])) {
 
         th,
         td {
-            border: 1px solid black;
+            border: 2px solid darkslategray;
+            padding-bottom: 50px;
+            
+            
+
+        }
+        .min{
+            border: 6px solid darkslategray;
+            margin-top: 10px;
+            border-right: transparent;
+            border-bottom: transparent;
+            border-left: transparent;
+        }
+        .mon{
+            border: transparent;
+            margin-top: 100px;
+            padding-right: 70px;
+
+        }
+        .man{
+            margin-left: 10px;
+            border: transparent;
+            font-size: 17px;
+            padding-bottom:70px;
+            font-family: Georgia, serif;
+
         }
 
         .checked {
@@ -39,14 +67,16 @@ if (!isset($_SESSION["id"])) {
 
 <body>
     <?php include "applicant-nav.php" ?>
-    <div>
+    <div class="min">
+        <div class="mon">
+            <div class="man">
         <label>Current Job</label>
         <input id='myInput1' onkeyup='searchTable1()' type='text' placeholder="Search">
         <?php
         $q = $con->query("SELECT * FROM employment e LEFT JOIN users u ON e.user_id = u.id WHERE u.id = $_SESSION[id] and comment = '' and ratings IS NULL");
         if ($q->num_rows > 0) :
         ?>
-
+</div>
             <table id='myTable1'>
                 <thead>
                     <tr>
@@ -88,9 +118,14 @@ if (!isset($_SESSION["id"])) {
         <?php
         endif;
         ?>
-
+        <br>
+        <br>
+        <br>
         <label>Previous Jobs</label>
         <input id='myInput' onkeyup='searchTable()' type='text' placeholder="Search">
+        <br>
+        <br>
+        <br>
         <table id='myTable'>
             <thead>
                 <tr>
@@ -151,6 +186,7 @@ if (!isset($_SESSION["id"])) {
             </tbody>
         </table>
     </div>
+</div>
 
 </body>
 <script>

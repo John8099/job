@@ -16,6 +16,9 @@ if (!isset($_SESSION["id"])) {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <style>
+        body{
+            background-color: lightgray;
+        }
         table {
             border-collapse: collapse;
         }
@@ -28,27 +31,56 @@ if (!isset($_SESSION["id"])) {
 
         th,
         td {
-            border: 1px solid black;
+            border: 1px solid darkslategray;
+            border-width: 3px;
+            padding-bottom: 40px;
+            padding-right: 20px;
+            color: black;
+            background-color: lightgray;
+            font: 17px Georgia, serif;
+            
+        }
+        .min{
+            border: 6px solid darkslategray;
+            margin-top: 10px;
+            border-right: transparent;
+            border-bottom: transparent;
+            border-left: transparent;
+        }
+        .mon{
+            border: transparent;
+            margin-top: 100px;
+            padding-left: 100px;
+        }
+        .man{
+            margin-left: 800px;
+            border: transparent;
+            font: 25px Georgia, serif;
+            padding-bottom:70px;
+
         }
     </style>
 </head>
 
 <body>
     <?php include_once("employer-nav.php") ?>
-    <div>
+    <div class="min">
+        <div class="mon">
+            <div class="man">
         <label>My Employee</label>
         <input id='myInput' onkeyup='searchTable()' type='text' placeholder="Search">
+    </div>
         <table id='myTable'>
             <thead>
                 <tr>
-                    <th>#</th>
-                    <th>Fullname</th>
-                    <th>Birth day</th>
-                    <th>Age</th>
-                    <th>Address</th>
-                    <th>Contact Number</th>
-                    <th>Hired On</th>
-                    <th>Action</th>
+                    <th style="font-weight: bold;">#</th>
+                    <th style="font-weight: bold;">Fullname</th>
+                    <th style="font-weight: bold;">Birthday</th>
+                    <th style="font-weight: bold;">Age</th>
+                    <th style="font-weight: bold;">Address</th>
+                    <th style="font-weight: bold;">Contact Number</th>
+                    <th style="font-weight: bold;">Hired On</th>
+                    <th style="font-weight: bold;">Action</th>
                 </tr>
             </thead>
             <tbody>
@@ -88,6 +120,7 @@ if (!isset($_SESSION["id"])) {
             </tbody>
         </table>
     </div>
+</div>
 
 </body>
 <script>

@@ -14,6 +14,9 @@ if (!isset($_SESSION["id"])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Category List</title>
     <style>
+        body{
+            background-color: lightgray;
+        }
         table {
             border-collapse: collapse;
         }
@@ -26,7 +29,35 @@ if (!isset($_SESSION["id"])) {
 
         th,
         td {
-            border: 1px solid black;
+            border: 1px solid darkslategray;
+            border-width: 3px;
+            padding-bottom: 50px;
+            padding-left: 60px;
+            padding-right: 70px;
+            
+
+        }
+        .min{
+            border: 6px solid darkslategray;
+            margin-top: 10px;
+            border-bottom: transparent;
+            border-left: transparent;
+            border-right: transparent;
+            font: 17px Georgia, serif;
+        }
+        .mon{
+            border: transparent;
+            margin-top: 80px;
+            padding-left: 380px;
+        }
+        .man{
+            margin-left: 600px;
+            border: transparent;
+            font: 25px Georgia, serif;
+            padding-bottom:70px;
+
+        }
+
         }
     </style>
 </head>
@@ -35,9 +66,12 @@ if (!isset($_SESSION["id"])) {
     <?php
     include_once("admin-nav.php");
     ?>
-    <div>
+    <div class="min">
+        <div class="mon">
+            <div class="man">
         <label>Category List</label>
         <input id='myInput' onkeyup='searchTable()' type='text' placeholder="Search">
+    </div>
         <table id='myTable'>
             <thead>
                 <tr>
@@ -66,6 +100,7 @@ if (!isset($_SESSION["id"])) {
             </tbody>
         </table>
     </div>
+</div>
 
 </body>
 <script>
